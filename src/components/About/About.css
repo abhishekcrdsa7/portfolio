@@ -1,0 +1,190 @@
+/*#about {*/
+/*    background-color:  #FFF;*/
+/*    color: #0b132b;*/
+/*    height: 20vh;*/
+/*    width: 50vw;*/
+/*    position: absolute;*/
+/*    top: 25vh;*/
+/*    left: 23vw;*/
+/*    border-radius: 3px;*/
+/*    animation: anim1 1000ms cubic-bezier(0.565, -0.405, 0.415, 1.480);*/
+/*    animation-fill-mode: forwards;*/
+/*    padding: 20px;*/
+/*}*/
+
+/*h1 {*/
+/*    text-align: center;*/
+/*}*/
+
+/*ul {*/
+/*    list-style: none;*/
+/*    padding: 0;*/
+/*}*/
+
+/*#listf {*/
+/*    display: flex;*/
+/*    justify-content: space-around;*/
+/*}*/
+
+/*#detail {*/
+/*    animation: anim 6s;*/
+/*}*/
+
+/*@keyframes anim {*/
+/*    0% {*/
+/*        opacity: 0;*/
+/*    }*/
+/*    25% {*/
+/*        opacity: 0;*/
+/*    }*/
+/*    100% {*/
+/*        opacity: 1;*/
+/*    }*/
+/*}*/
+
+/*@keyframes anim1 {*/
+/*    from {*/
+/*        width: 0;*/
+/*    }*/
+
+/*    to {*/
+/*        width: 50vw;*/
+/*    }*/
+/*}*/
+
+/*@media only screen and (max-width: 1366px) {*/
+/*    #about {*/
+/*        position: absolute;*/
+/*        height: 20vh;*/
+/*        width: 70vw;*/
+/*        left: 13vw;*/
+/*        animation: anim2 1000ms cubic-bezier(0.565, -0.405, 0.415, 1.480);*/
+/*        animation-fill-mode: forwards;*/
+/*        padding: 10px;*/
+/*    }*/
+
+/*    @keyframes anim2 {*/
+/*        from {*/
+/*            width: 0;*/
+/*        }*/
+
+/*        to {*/
+/*            width: 70vw;*/
+/*        }*/
+/*    }*/
+/*}*/
+#about {
+    background-color:  #FFF;
+    color: #0b132b;
+    height: 20vh;
+    width: 50vw;
+    position: absolute;
+    top: 25vh;
+    left: 23vw;
+    border-radius: 3px;
+    -webkit-animation: anim1 1000ms cubic-bezier(0.565, -0.405, 0.415, 1.480);
+    animation: anim1 1000ms cubic-bezier(0.565, -0.405, 0.415, 1.480);
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+#listf {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+
+#detail {
+    -webkit-animation: anim 6s;
+    animation: anim 6s;
+}
+
+@-webkit-keyframes anim {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes anim {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes anim1 {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 50vw;
+    }
+}
+
+@keyframes anim1 {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 50vw;
+    }
+}
+
+@media only screen and (max-width: 1366px) {
+    #about {
+        position: absolute;
+        height: 20vh;
+        width: 70vw;
+        left: 13vw;
+        -webkit-animation: anim2 1000ms cubic-bezier(0.565, -0.405, 0.415, 1.480);
+        animation: anim2 1000ms cubic-bezier(0.565, -0.405, 0.415, 1.480);
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        padding: 10px;
+    }
+
+    @-webkit-keyframes anim2 {
+        from {
+            width: 0;
+        }
+
+        to {
+            width: 70vw;
+        }
+    }
+
+    @keyframes anim2 {
+        from {
+            width: 0;
+        }
+
+        to {
+            width: 70vw;
+        }
+    }
+}
