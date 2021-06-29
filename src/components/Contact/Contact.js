@@ -1,11 +1,12 @@
 import React, { Component} from 'react';
-import './Contact.css';
-import Zoom from "react-reveal/Zoom";
-import LoadingIcon from '../Loading/Loader';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import sendEmail from './AWS-SES';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import './Contact.css';
+import { TextareaAutosize, Typography } from '@material-ui/core';
 
 class Contact extends Component {
-
     state= {
       name: "",
       email: "",
@@ -38,73 +39,47 @@ class Contact extends Component {
     };
 
     render() {
+        const { loading } = this.state;
         return (
-            <Zoom>
-                <div className="contactContainer" id="contact">
-                    <h1>Contact</h1>
-                    <div className="mail">
-                        <h2>Mail</h2>
-                        <h3>admin@abhishek-sharma.net</h3>
-                    </div>
-                    <div className="leaveMessage">
-                        <h2>Leave a message</h2>
-                        {this.state.error || this.state.success ? <div style={{color: this.state.error ? 'red' : 'green'}}><h4>{this.state.error || this.state.success}</h4></div> : null}
-                        <div>
-                            <div className="cinput">
-                                <label>
-                                    <h3>Your Name</h3>
-                                    <input
-                                        type="text"
-                                        required
-                                        className="contactInput"
-                                        value={this.state.name}
-                                        onChange={
-                                            (e) => {
-                                                this.setState({...this.state, name: e.target.value}
-                                                )
-                                            }
-                                        }
-                                    />
-                                </label>
-                            </div>
-                            <div className="cinput">
-                                <label className="cinput">
-                                    <h3>Your Email</h3>
-                                    <input
-                                        type="email"
-                                        className="contactInput"
-                                        required
-                                        value={this.state.email}
-                                        onChange={
-                                            (e) => {
-                                                this.setState({...this.state, email: e.target.value}
-                                                )
-                                            }
-                                        }
-                                    />
-                                </label>
-                            </div>
-                        </div>
-                        <label>
-                            <h3>Message</h3>
-                            <textarea
-                                required
-                                rows="10"
-                                cols="55"
-                                value={this.state.message}
-                                onChange={
-                                    (e) => {
-                                       this.setState({...this.state, message: e.target.value});
-                                    }
-                                }
-                            />
-                        </label>
-                    </div>
-                    <div className="submitButton" onClick={this.emailToAdmin}>
-                        {this.state.loading ? <LoadingIcon/> : <h4>Submit</h4>}
-                    </div>
+            <div style={{marginBottom: '10vh'}}>
+            <Typography style={{paddingBottom: '16px'}} variant="h6" component="h1" align='center'>Leave a message</Typography>
+            <div>
+                {this.state.error || this.state.success ? <div style={{color: this.state.error ? 'red' : 'green'}}><h4>{this.state.error || this.state.success}</h4></div> : null}
+                <div>
+                    <TextField required className="textField" id="standard-basic" label="Your name" value={this.state.name} variant="outlined"
+                        onChange={
+                            (e) => {
+                                this.setState({...this.state, name: e.target.value}
+                                )
+                            }
+                        }
+                    />
+                    <TextField required className="textField" id="standard-basic" label="Your email" value={this.state.email} variant="outlined"
+                        onChange={
+                            (e) => {
+                                this.setState({...this.state, email: e.target.value}
+                                )
+                            }
+                        } 
+                    />
                 </div>
-            </Zoom>
+                <label>
+                    <TextareaAutosize
+                        required
+                        style={{width: '98.6%'}}
+                        placeholder="Your message"
+                        rows="10"
+                        value={this.state.message}
+                        onChange={
+                            (e) => {
+                               this.setState({...this.state, message: e.target.value});
+                            }
+                        }
+                    />
+                </label>
+            </div>
+            <Button style={{backgroundColor: 'rgb(25, 25, 25)', color: 'white', marginTop: '10px'}} variant="contained" onClick={this.emailToAdmin}>{loading ? <CircularProgress /> : "Send message"} </Button>
+        </div>
         );
     }
 }
