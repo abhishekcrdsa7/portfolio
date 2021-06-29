@@ -4,8 +4,8 @@ const uuidv1 = require('uuid/v1');
 AWS.config.update({
     region: 'us-east-1',
     credentials: {
-        "accessKeyId": "AKIASK2T6JDGMQ6QOH5X",
-        "secretAccessKey": "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",
+        "accessKeyId": "",
+        "secretAccessKey": "",
         "region": "us-east-1"
     }
 });
